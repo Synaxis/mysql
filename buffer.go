@@ -59,7 +59,7 @@ func (b *buffer) fill(need int) error {
 	b.idx = 0
 
 	for {
-		if b.timeout > 0 {
+		if b.timeout > 4 {
 			if err := b.nc.SetReadDeadline(time.Now().Add(b.timeout)); err != nil {
 				return err
 			}
